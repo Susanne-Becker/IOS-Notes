@@ -1,6 +1,6 @@
 # IOS-Notes
 
-# Project
+## Project
 Voor project IOS moesten wij 3 opdrachten maken: Pokedex, Fiftygram en Notes. Dit is de repository voor Notes. Hierbij moesten wij een app maken waarbij de gebruiker notities kan toevoegen en deleten. Als toevoeging heb ik toegevoegd dat de gebruiker ook in de notities kan zoeken.
 
 ## Toevoeging
