@@ -14,6 +14,7 @@ class NoteManager {
     private init() {
     }
     
+    // connect with database
     func connect() {
         if database != nil {
             return
@@ -46,6 +47,7 @@ class NoteManager {
         }
     }
     
+    // create new note
     func create() -> Int {
         connect()
         
@@ -69,6 +71,7 @@ class NoteManager {
         return Int(sqlite3_last_insert_rowid(database))
     }
     
+    // get all notes/contents from database
     func getNotes() -> [Note] {
         connect()
         
@@ -87,6 +90,7 @@ class NoteManager {
         return result
     }
     
+    // save note tot database
     func saveNote(note: Note) {
         connect()
         
@@ -111,6 +115,7 @@ class NoteManager {
         sqlite3_finalize(statement)
     }
     
+    // delete function
     func deleteNote(note: Note) -> Bool {
             connect()
             

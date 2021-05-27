@@ -2,31 +2,36 @@ import UIKit
 
 class NotesListViewController: UITableViewController, UISearchBarDelegate {
     
+    //connecting data to views
     @IBOutlet var SearchBar: UISearchBar!
-    
-    var searchResults: [Note] = []
-    var notes: [Note] = []
-
     @IBAction func createNote() {
         let _ = NoteManager.shared.create()
         reload()
     }
     
+    //lists
+    var searchResults: [Note] = []
+    var notes: [Note] = []
+    
+    //reload data
     func reload() {
         notes = NoteManager.shared.getNotes()
         tableView.reloadData()
     }
     
+    //load data
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         SearchBar?.delegate = self
         reload()
     }
     
+    //display data in table
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // how many items
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchResults.count == 0 {
             return notes.count
@@ -36,6 +41,7 @@ class NotesListViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    // show right content
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
         
@@ -48,6 +54,7 @@ class NotesListViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
+    // use segue to pass note from list to other view controler
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NoteSegue",
                 let destination = segue.destination as? NoteViewController,
@@ -62,6 +69,8 @@ class NotesListViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
+    
+    //search results
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchResults.removeAll()
         
