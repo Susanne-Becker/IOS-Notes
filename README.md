@@ -7,4 +7,4 @@ Voor project IOS moesten wij 3 opdrachten maken: Pokedex, Fiftygram en Notes. Di
 Als toevoeging heb ik een zoekbalk gemaakt en heb ik een icoon meegegeven aan de app. Ik heb ook geprobeerd om afbeeldingen toe te voegen aan een notitie, maar dit is helaas niet gelukt.
 
 ## Video
-Link: https://video.uva.nl/media/0_4s88cwbl
+Link: https://video.uva.nl/media/0_5xp8t8gl
